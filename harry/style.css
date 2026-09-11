@@ -1,0 +1,13 @@
+.card{
+    background-color: aquamarine;
+    border-color: black;
+    border-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 10px ;
+}
+
+h2{
+    color: aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+    
+}

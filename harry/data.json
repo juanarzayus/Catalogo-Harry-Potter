@@ -1,0 +1,29 @@
+[
+    {
+        "nombre":"karol",
+        "edad":21,
+        "carrera":"Ingenieria de sistemas"
+    },
+    {
+        "nombre":"Jhan",
+        "edad":22,
+        "carrera":"Ingenieria de sistemas"
+    },
+    {
+        "nombre":"juan",
+        "edad":23,
+        "carrera":"Ingenieria de sistemas"
+    },
+    {
+        "nombre":"Juan C",
+        "edad":24,
+        "carrera":"Ingenieria de sistemas"
+    },
+    {
+        "nombre":"Neyver",
+        "edad":25,
+        "carrera":"Ingenieria de sistemas"
+    }
+
+
+]
