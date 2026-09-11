@@ -144,12 +144,20 @@ async function ejecutarLogicaPerfil() {
         nombre: "Juan David Arzayus Cadavid",
         edad: 24,
         carrera: "Ingenieria de sistemas",
-        foto: "./perfil/foto.jpg",
+        foto: "./perfil/juan-arzayus.png",
         PerfilProfesional: "Ingeniero de software",
         universidad: "Universidad Santiago de Cali",
         tecnologias: ["HTML", "CSS", "JavaScript", "Python", "Java", "C#", "Node.js", "React"],
+    }
 
-
+    const datosPerfil = {
+        "nombre": "Juan David Arzayus Cadavid",
+        "edad": 24,
+        "carrera": "Ingenieria de sistemas",
+        "foto": "./perfil/juan-arzayus.png",
+        "PerfilProfesional": "Ingeniero de software",
+        "universidad": "Universidad Santiago de Cali",
+        "tecnologias": ["HTML", "CSS", "JavaScript", "Python", "Java", "C#", "Node.js", "React"],
     }
 
     contenedorPerfil.innerHTML = `
