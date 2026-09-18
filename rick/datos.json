@@ -1,0 +1,82 @@
+[
+  {
+    "nombre": "Rick",
+    "apellido": "Sanchez",
+    "edad": 70,
+    "especie": "Humano",
+    "genero": "Masculino",
+    "imagen": "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+  },
+  {
+    "nombre": "Morty",
+    "apellido": "Smith",
+    "edad": 14,
+    "especie": "Humano",
+    "genero": "Masculino",
+    "imagen": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+  },
+  {
+    "nombre": "Summer",
+    "apellido": "Smith",
+    "edad": 17,
+    "especie": "Humano",
+    "genero": "Femenino",
+    "imagen": "https://rickandmortyapi.com/api/character/avatar/3.jpeg"
+  },
+  {
+    "nombre": "Beth",
+    "apellido": "Smith",
+    "edad": 34,
+    "especie": "Humano",
+    "genero": "Femenino",
+    "imagen": "https://rickandmortyapi.com/api/character/avatar/4.jpeg"
+  },
+  {
+    "nombre": "Jerry",
+    "apellido": "Smith",
+    "edad": 35,
+    "especie": "Humano",
+    "genero": "Masculino",
+    "imagen": "https://rickandmortyapi.com/api/character/avatar/5.jpeg"
+  },
+  {
+    "nombre": "Meeseeks",
+    "apellido": "Mr",
+    "edad": 1,
+    "especie": "Meeseeks",
+    "genero": "Masculino",
+    "imagen": "https://rickandmortyapi.com/api/character/avatar/242.jpeg"
+  },
+  {
+    "nombre": "Birdperson",
+    "apellido": "Birdperson",
+    "edad": 50,
+    "especie": "Birdperson",
+    "genero": "Masculino",
+    "imagen": "https://rickandmortyapi.com/api/character/avatar/47.jpeg"
+  },
+  {
+    "nombre": "Snowball",
+    "apellido": "Snowball",
+    "edad": 1,
+    "especie": "Snowball",
+    "genero": "Masculino",
+    "imagen": "https://rickandmortyapi.com/api/character/avatar/329.jpeg"
+  },
+  {
+    "nombre": "Mr",
+    "apellido": "Poopybutthole",
+    "edad": 1,
+    "especie": "Mr. Poopybutthole",
+    "genero": "Masculino",
+    "imagen": "https://rickandmortyapi.com/api/character/avatar/244.jpeg"
+  },
+  {
+    "nombre": "Squanchy",
+    "apellido": "",
+    "edad": 40,
+    "especie": "Cat-person",
+    "genero": "Masculino",
+    "imagen": "https://rickandmortyapi.com/api/character/avatar/331.jpeg"
+  }
+]

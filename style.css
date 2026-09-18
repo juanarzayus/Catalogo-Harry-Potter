@@ -89,8 +89,22 @@ footer {
     color: #666;
 }
 
-/*Módulo Harry Potter*/
-.modulo-harry h2 {
+/* Módulo Harry Potter */
+.modulo-harry {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('./harry/Fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    padding: 24px;
+    min-height: 500px;
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.modulo-harry h1 {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
     margin-bottom: 8px;
 }
 
@@ -149,75 +163,304 @@ footer {
     color: #333;
 }
 
-/* Módulo Perfil */
-.modulo-perfil h2 {
+/* Módulo Perfil y Documentación */
+.modulo-perfil {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 0;
+    color: #333;
+}
+
+.perfil-header-container h2 {
+    font-size: 1.8rem;
+    color: #1a252f;
+    border-bottom: 3px solid #2c3e50;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+}
+
+/* Card Principal de Perfil */
+.perfil-card-principal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 32px;
+    align-items: center;
+}
+
+.perfil-foto-wrapper {
+    flex: 0 0 110px;
+    width: 110px;
+    height: 110px;
+    margin: 0;
+}
+
+.perfil-foto {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #2c3e50;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.perfil-datos-info {
+    flex: 1;
+    min-width: 280px;
+}
+
+.perfil-datos-info h3 {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin-bottom: 4px;
+}
+
+.perfil-rol {
+    font-size: 0.95rem;
+    color: #3498db;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.perfil-detalles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    background: #f8fafc;
+    padding: 14px 16px;
+    border-radius: 8px;
+    border: 1px solid #edf2f7;
+    margin-bottom: 16px;
+}
+
+.detalle-item {
+    font-size: 0.9rem;
+}
+
+.detalle-item .label {
+    font-weight: 700;
+    color: #4a5568;
+}
+
+.detalle-item .valor {
+    color: #2d3748;
+}
+
+/* Tecnologías Badges */
+.tecnologias-seccion h4 {
+    font-size: 0.95rem;
+    color: #4a5568;
     margin-bottom: 8px;
 }
 
-.grid-perfil {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 16px;
-    padding: 16px 0;
+.badges-tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-.card-perfil {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 12px;
-    background-color: #fafafa;
+.badge {
+    background: #2c3e50;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección Explicativa del Proyecto */
+.explicacion-proyecto {
+    margin-top: 20px;
+}
+
+.explicacion-proyecto h2 {
+    font-size: 1.6rem;
+    color: #1a252f;
+    border-bottom: 3px solid #27ae60;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.tarjeta-explicativa {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.tarjeta-explicativa h3 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 12px;
+}
+
+.tarjeta-explicativa p {
+    font-size: 0.93rem;
+    line-height: 1.6;
+    color: #4a5568;
+    margin-bottom: 10px;
+}
+
+.tarjeta-explicativa ul {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.tarjeta-explicativa li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #4a5568;
+    margin-bottom: 6px;
+}
+
+.grid-explicacion-modulos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.modulo-explicacion {
+    border-top: 4px solid #3498db;
+}
+
+.modulo-explicacion:last-child {
+    border-top: 4px solid #2ecc71;
+}
+
+.codigo-snippet {
+    background: #1e293b;
+    color: #38bdf8;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.88rem;
+    margin: 10px 0;
+    word-break: break-all;
+}
+
+
+
+
+/* Módulo Rick and Morty (Pantalla Completa) */
+.modulo-rick {
+    background-image: linear-gradient(rgba(5, 15, 10, 0.75), rgba(5, 15, 20, 0.85)), url('./rick/Fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: -24px;
+    padding: 32px 24px;
+    min-height: calc(100vh - 120px);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.header-rick {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.titulo-img {
+    max-width: 380px;
+    width: 90%;
+    height: auto;
+    filter: drop-shadow(0 0 16px rgba(0, 255, 136, 0.7));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.titulo-img:hover {
+    transform: scale(1.04);
+    filter: drop-shadow(0 0 24px rgba(0, 255, 136, 0.9));
+}
+
+.grid-rick {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 24px;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.card-rick {
+    background: rgba(12, 22, 32, 0.88);
+    border: 2px solid #00ff88;
+    border-radius: 14px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 18px rgba(0, 255, 136, 0.2);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease;
+    backdrop-filter: blur(8px);
 }
 
-.card-perfil img {
+.card-rick:hover {
+    transform: translateY(-8px);
+    border-color: #39ff14;
+    box-shadow: 0 12px 30px rgba(0, 255, 136, 0.5);
+}
+
+.card-rick img {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 10px;
+    border: 1.5px solid rgba(0, 255, 136, 0.6);
+    background-color: #0b141e;
+    transition: transform 0.3s ease;
 }
 
-.card-perfil h3 {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    font-size: 1rem;
-    color: #222;
+.card-rick:hover img {
+    transform: scale(1.02);
 }
 
-.card-perfil .info {
+.card-rick h3 {
+    margin-top: 14px;
+    margin-bottom: 8px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #00ff88;
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
+}
+
+.card-rick .info {
     width: 100%;
     text-align: left;
-    padding: 5px 0;
+    margin-top: 6px;
+    font-size: 0.88rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 12px;
+    border-radius: 8px;
+    border-left: 3px solid #00ff88;
 }
 
-.card-perfil .info p {
-    margin: 3px 0;
-    font-size: 0.8rem;
-    color: #555;
+.card-rick .info p {
+    margin: 4px 0;
+    color: #e2f0d9;
 }
 
-.card-perfil .info b {
-    color: #333;
+.card-rick .info b {
+    color: #00ff88;
 }
 
 
-
-/* Módulo Rick and Morty*/
-.modulo-rick h2 {
-    margin-bottom: 8px;
+.card-rick .info b {
+    color: #a0f0c0;
 }
 
-.contenido-rick {
-    margin-top: 16px;
-    padding: 16px;
-    border: 1px dashed #aaa;
-    border-radius: 6px;
-    background-color: #f9f9f9;
-}
 
 /* Responsive*/
 @media (max-width: 600px) {

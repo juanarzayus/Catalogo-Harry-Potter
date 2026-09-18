@@ -1,13 +1,72 @@
 <div class="modulo-perfil">
-    <h2>Perfil</h2>
-    <div class="grid-perfil">
-        <div class="card-perfil">
-            <img src="./perfil/juan-arzayus.png" alt="">
-            <div id="datosperfil">
+    <!-- Encabezado del Perfil -->
+    <div class="perfil-header-container">
+        <h2>Perfil del Desarrollador</h2>
+    </div>
+    <!-- Card Principal con Datos  -->
+    <div class="perfil-card-principal">
+        <div class="perfil-foto-wrapper">
+            <img src="./perfil/juan-arzayus.png" alt="Juan David Arzayus Cadavid" class="perfil-foto">
+        </div>
+        <div class="perfil-datos-info" id="datosperfil">
+            <h3>Juan David Arzayus Cadavid</h3>
+            <p class="perfil-rol">Ingeniero de Software | Estudiante de Ingeniería de Sistemas</p>
 
+            <div class="perfil-detalles-grid">
+                <div class="detalle-item">
+                    <span class="label">Edad:</span>
+                    <span class="valor">24 años</span>
+                </div>
+                <div class="detalle-item">
+                    <span class="label">Carrera:</span>
+                    <span class="valor">Ingeniería de Sistemas</span>
+                </div>
+                <div class="detalle-item">
+                    <span class="label">Universidad:</span>
+                    <span class="valor">Universidad Santiago de Cali</span>
+                </div>
+                <div class="detalle-item">
+                    <span class="label">Perfil Profesional:</span>
+                    <span class="valor">Ingeniero de Software</span>
+                </div>
+            </div>
+
+            <div class="tecnologias-seccion">
+                <h4>Tecnologías & Habilidades:</h4>
+                <div class="badges-tecnologias">
+                    <span class="badge">HTML</span>
+                    <span class="badge">CSS</span>
+                    <span class="badge">JavaScript</span>
+                    <span class="badge">Python</span>
+                    <span class="badge">Java</span>
+                    <span class="badge">C#</span>
+                    <span class="badge">Node.js</span>
+                    <span class="badge">React</span>
+                </div>
             </div>
         </div>
     </div>
-    <script src="script.js">
-    </script>
-</div>
+
+    <!-- Sección Explicativa del Proyecto -->
+    <div class="explicacion-proyecto">
+        <h2>Documentación del Proyecto</h2>
+
+        <!-- Uso de HTML, CSS y JS -->
+        <div class="tarjeta-explicativa">
+            <h3>Desarrollo y Tecnologías Utilizadas (HTML, CSS y JS)</h3>
+            <p>La aplicación está diseñada bajo una arquitectura de <b>Aplicación de Página Única </b> donde el
+                contenido de las pestañas se carga dinámicamente sin recargar la página:</p>
+            <ul>
+                <li><b>HTML5:</b> Proporciona la estructura semántica base del proyecto, definiendo el contenedor
+                    principal <code>#contenedordepaginas</code> y las vistas HTML modulares de cada catálogo.</li>
+                <li><b>CSS3:</b> Garantiza un diseño adaptativo y moderno usando <i>Flexbox</i> y <i>CSS Grid</i>, con
+                    estilos personalizados para cada módulo, efectos hover e identidades visuales únicas.</li>
+                <li><b>JavaScript (Vanilla JS):</b> Controla toda la interactividad del sistema: gestiona la navegación
+                    por pestañas (<i>tabs</i>), realiza solicitudes asíncronas con <code>fetch()</code> y
+                    <code>async/await</code>, y construye dinámicamente las tarjetas en el DOM.
+                </li>
+            </ul>
+        </div>
+
+
+    </div>

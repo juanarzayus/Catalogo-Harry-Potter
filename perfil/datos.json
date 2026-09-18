@@ -1,0 +1,18 @@
+{
+  "nombre": "Juan David Arzayus Cadavid",
+  "edad": 24,
+  "carrera": "Ingeniería de Sistemas",
+  "foto": "./perfil/juan-arzayus.png",
+  "PerfilProfesional": "Ingeniero de Software",
+  "universidad": "Universidad Santiago de Cali",
+  "tecnologias": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Python",
+    "Java",
+    "C#",
+    "Node.js",
+    "React"
+  ]
+}

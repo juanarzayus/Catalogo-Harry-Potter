@@ -2,26 +2,6 @@
 const contenedor = document.getElementById('contenedordepaginas');
 const tabs = document.querySelectorAll('.tab');
 
-// Plantillas de respaldo si se abre con protocolo file:// (doble click)
-const plantillasDefault = {
-    harry: `
-        <h1>Personajes de Harry Potter</h1>
-        <p>Aquí algunos de ellos:</p>
-        <div id="datosprincipal"></div>
-    `,
-    perfil: `
-        <h2>Perfil / Lista de Integrantes</h2>
-        <p>Datos de estudiantes:</p>
-        <div id="datosperfil" class="grid-perfil"></div>
-    `,
-    tl: `
-        <h2>Módulo Rick and Morty</h2>
-        <div class="contenido-tl">
-            <p>Espacio reservado para el módulo Rick and Morty.</p>
-        </div>
-    `
-};
-
 // Escuchar eventos en los botones de navegación (Tabs)
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -39,33 +19,31 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * Carga el módulo en el contenedor principal.
- * Intenta hacer fetch del HTML local, y si falla (por protocolo file:// o CORS local),
- * usa la plantilla HTML por defecto.
+ * Carga el módulo en el contenedor principal leyendo directamente el HTML local del módulo.
  */
 async function cargarModulo(modulo) {
-    contenedor.innerHTML = '<p class="cargando">Cargando personajes...</p>';
+    contenedor.innerHTML = '<p class="cargando">Cargando contenido...</p>';
 
-    let htmlVista = plantillasDefault[modulo] || plantillasDefault.harry;
+    // Determinar la carpeta correcta
+    const carpetaModulo = (modulo === 'tl') ? 'rick' : modulo;
 
-    // Intentar obtener el HTML del archivo del módulo (si se ejecuta en servidor)
     try {
-        const ruta = `./${modulo}/index.html`;
+        const ruta = `./${carpetaModulo}/index.html`;
         const respuesta = await fetch(ruta);
         if (respuesta.ok) {
             const textHtml = await respuesta.text();
             const parser = new DOMParser();
             const doc = parser.parseFromString(textHtml, 'text/html');
             if (doc.body && doc.body.innerHTML.trim() !== '') {
-                htmlVista = doc.body.innerHTML;
+                contenedor.innerHTML = doc.body.innerHTML;
             }
+        } else {
+            throw new Error(`No se pudo cargar la vista de ${carpetaModulo}`);
         }
     } catch (e) {
-        console.warn('Ejecutando en entorno local file://. Usando plantilla directa para:', modulo);
+        console.error('Error cargando la vista del módulo:', e);
+        contenedor.innerHTML = `<p class="error">Error al cargar la página (${e.message}).</p>`;
     }
-
-    // Inyectar el HTML en el contenedor
-    contenedor.innerHTML = htmlVista;
 
     // Ejecutar lógica del módulo correspondiente
     switch (modulo) {
@@ -76,14 +54,13 @@ async function cargarModulo(modulo) {
             await ejecutarLogicaPerfil();
             break;
         case 'tl':
-            ejecutarLogicaTL();
+        case 'rick':
+            await ejecutarLogicaTL();
             break;
     }
 }
 
-/*LÓGICA PRINCIPAL */
-
-
+/* LÓGICA MÓDULO HARRY POTTER */
 async function ejecutarLogicaHarry() {
     const contenedorDatos = document.getElementById('datosprincipal');
     if (!contenedorDatos) return;
@@ -125,56 +102,40 @@ async function ejecutarLogicaHarry() {
     }
 }
 
-/**
-  Lógica del módulo Perfil
- */
+/* LÓGICA MÓDULO PERFIL */
 async function ejecutarLogicaPerfil() {
-    const contenedorPerfil = document.getElementById('datosperfil');
-    if (!contenedorPerfil) return;
+    console.log('Módulo Perfil activo.');
+}
 
-    let {
-        nombre,
-        edad,
-        carrera,
-        foto,
-        universidad,
-        tecnologias,
+/* LÓGICA MÓDULO RICK AND MORTY (TEMA LIBRE) */
+async function ejecutarLogicaTL() {
+    const contenedorRick = document.getElementById('datosrick');
+    if (!contenedorRick) return;
 
-    } = {
-        nombre: "Juan David Arzayus Cadavid",
-        edad: 24,
-        carrera: "Ingenieria de sistemas",
-        foto: "./perfil/juan-arzayus.png",
-        PerfilProfesional: "Ingeniero de software",
-        universidad: "Universidad Santiago de Cali",
-        tecnologias: ["HTML", "CSS", "JavaScript", "Python", "Java", "C#", "Node.js", "React"],
+    contenedorRick.innerHTML = '<p class="cargando">Cargando personajes de Rick and Morty...</p>';
+
+    try {
+        const respuesta = await fetch('./rick/datos.json');
+        if (!respuesta.ok) throw new Error('No se pudo cargar datos.json');
+        const personajes = await respuesta.json();
+
+        contenedorRick.innerHTML = '';
+        personajes.forEach(personaje => {
+            const card = document.createElement('div');
+            card.className = 'card-rick';
+            card.innerHTML = `
+                <img src="${personaje.imagen}" alt="${personaje.nombre}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://rickandmortyapi.com/api/character/avatar/1.jpeg';">
+                <h3>${personaje.nombre} ${personaje.apellido || ''}</h3>
+                <div class="info">
+                    <p><b>Edad:</b> ${personaje.edad}</p>
+                    <p><b>Especie:</b> ${personaje.especie}</p>
+                    <p><b>Género:</b> ${personaje.genero}</p>
+                </div>
+            `;
+            contenedorRick.appendChild(card);
+        });
+    } catch (error) {
+        console.error('Error al cargar los personajes de Rick y Morty:', error);
+        contenedorRick.innerHTML = `<p class="error">Error cargando el catálogo: ${error.message}</p>`;
     }
-
-    const datosPerfil = {
-        "nombre": "Juan David Arzayus Cadavid",
-        "edad": 24,
-        "carrera": "Ingenieria de sistemas",
-        "foto": "./perfil/juan-arzayus.png",
-        "PerfilProfesional": "Ingeniero de software",
-        "universidad": "Universidad Santiago de Cali",
-        "tecnologias": ["HTML", "CSS", "JavaScript", "Python", "Java", "C#", "Node.js", "React"],
-    }
-
-    contenedorPerfil.innerHTML = `
-    <img src="${foto}" alt="${nombre}">
-    <h3>${nombre}</h3>
-    <div class="info">
-        <p><b>Edad:</b> ${edad}</p>
-        <p><b>Carrera:</b> ${carrera}</p>
-        <p><b>Perfil Profesional:</b> ${PerfilProfesional}</p>
-    </div>
-`;
-    /**
-      Lógica de Rick and Morty
-     */
-
-    function ejecutarLogicaTL() {
-        console.log('Módulo Tema Libre activo.');
-    }
-
-};
+}
